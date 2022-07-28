@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.fragments.HomeFragment">
+
+    <LinearLayout
+        android:id="@+id/llTopOptions"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/bottom_round"
+        android:paddingHorizontal="10dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="35dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:padding="10dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/round_bg"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textScan"
+                android:textColor="@android:color/white"
+                android:text="@string/scan"
+                android:fontFamily="@font/custom_font"
+                android:textSize="20sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/scanNav"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:id="@+id/scanNav"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/ic_baseline_arrow_right_alt_24"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                app:tint="@android:color/white" />
+
+            <TextView
+                android:textColor="@android:color/white"
+                app:layout_constraintStart_toStartOf="@id/textScan"
+                app:layout_constraintEnd_toEndOf="@id/textScan"
+                app:layout_constraintTop_toBottomOf="@id/textScan"
+                android:text="@string/dummyLabel"
+                android:fontFamily="@font/custom_font"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_margin="5dp"
+            android:padding="10dp"
+            android:background="@drawable/round_bg"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textSell"
+                android:textColor="@android:color/white"
+                android:text="@string/sell"
+                android:fontFamily="@font/custom_font"
+                android:textSize="20sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/sellNav"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:id="@+id/sellNav"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/ic_baseline_arrow_right_alt_24"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                app:tint="@android:color/white" />
+
+            <TextView
+                android:textColor="@android:color/white"
+                android:fontFamily="@font/custom_font"
+                app:layout_constraintStart_toStartOf="@id/textSell"
+                app:layout_constraintEnd_toEndOf="@id/textSell"
+                app:layout_constraintTop_toBottomOf="@id/textSell"
+                android:text="@string/dummyLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/buyLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llTopOptions"
+        app:layout_constraintEnd_toStartOf="@+id/allLabel"
+        android:text="@string/available_to_buy"
+        android:fontFamily="@font/custom_font"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:paddingHorizontal="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/allLabel"
+        android:fontFamily="@font/custom_font"
+        app:layout_constraintTop_toBottomOf="@+id/llTopOptions"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/see_all"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="16sp"
+        android:paddingHorizontal="15dp"
+        android:layout_marginTop="22dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/gridview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buyLabel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="10dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp" />
+
+    <ProgressBar
+        android:id="@+id/progressLoader"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:indeterminateTint="#E53935"
+        android:layout_gravity="center" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
